@@ -1,0 +1,16 @@
+name = "anh-em-pho-chat"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fashion_db"
+database_id = "e81fadff-3e26-4211-89b7-ec7731d32afd"
+migrations_dir = "migrations"
+[[kv_namespaces]]
+binding = "CACHE"
+id = "c01111aba43b469990a88bb3aa748ccf"
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
