@@ -6,82 +6,111 @@
     <title>Anh Em Phố Chất - Phong Cách Thời Trang Hàng Đầu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1a1a1a;
-            --accent-color: #e63946;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #2b2d42;
-            --text-muted: #6c757d;
+        :root { 
+            --primary-color: #1a1a1a; 
+            --accent-color: #e63946; 
+            --bg-color: #f8f9fa; 
+            --card-bg: #ffffff; 
+            --text-color: #2b2d42; 
+            --text-muted: #6c757d; 
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-
+        
         /* Header */
-        header { background: var(--primary-color); color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; sticky: top; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-decoration: none; }
+        header { background: var(--primary-color); color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
         .logo span { color: var(--accent-color); }
         .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent-color); }
-        .cart-icon { position: relative; cursor: pointer; font-size: 1.2rem; }
-        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--accent-color); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; font-weight: bold; }
+        .cart-icon { position: relative; cursor: pointer; font-size: 1.2rem; padding: 5px; }
+        .cart-badge { position: absolute; top: -5px; right: -8px; background: var(--accent-color); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; font-weight: bold; }
 
         /* Hero Banner */
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80') center/cover; height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; max-width: 600px; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80') center/cover; height: 280px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; opacity: 0.9; }
 
         /* Main Container */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .section-title { font-size: 1.8rem; margin-bottom: 25px; text-align: center; position: relative; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent-color); margin: 8px auto 0; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-color); margin: 8px auto 0; }
 
         /* Product Grid */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 25px; }
         .product-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .product-img { width: 100%; height: 220px; object-fit: cover; background-color: #eee; }
-        .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; color: var(--primary-color); }
-        .product-price { font-size: 1.2rem; font-weight: 700; color: var(--accent-color); margin-bottom: 12px; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .product-img { width: 100%; height: 240px; object-fit: cover; background-color: #eee; }
+        .product-info { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--primary-color); height: 2.6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .product-price { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); margin-bottom: 10px; }
         .product-stock { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; }
         .btn-add { margin-top: auto; padding: 10px 15px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: background 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .btn-add:hover { background: var(--accent-color); }
 
+        /* Modal Giỏ Hàng */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 25px; border-radius: 12px; width: 420px; max-width: 90%; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; margin-bottom: 15px; }
+        .modal-body { max-height: 280px; overflow-y: auto; margin-bottom: 20px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .cart-total { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; margin-top: 10px; padding-top: 10px; border-top: 2px solid #ddd; }
+        .modal-footer { display: flex; justify-content: space-between; gap: 10px; }
+        .btn-close { padding: 8px 18px; background: #6c757d; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .btn-checkout { padding: 8px 18px; background: var(--accent-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
         /* Footer */
-        footer { background: var(--primary-color); color: #aaa; padding: 40px 5% 20px; margin-top: 60px; text-align: center; }
-        footer p { font-size: 0.9rem; }
+        footer { background: var(--primary-color); color: #aaa; padding: 30px 5%; margin-top: 60px; text-align: center; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <a href="#" class="logo">ANH EM PHỐ CHẤT <span>FASHION</span></a>
+        <a href="#" class="logo">ANH EM PHỐ CHẤT <span>SHOP</span></a>
         <ul class="nav-links">
             <li><a href="#">Trang chủ</a></li>
             <li><a href="#">Sản phẩm</a></li>
             <li><a href="#">Liên hệ</a></li>
         </ul>
-        <div class="cart-icon">
+        <div class="cart-icon" onclick="openCart()">
             <i class="fas fa-shopping-bag"></i>
             <span class="cart-badge" id="cart-count">0</span>
         </div>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Banner -->
     <section class="hero">
         <h2>Bộ Sưu Tập Thời Trang Mới</h2>
-        <p>Khám phá các sản phẩm chất lượng cao với phong cách hiện đại và mức giá ưu đãi nhất.</p>
+        <p>Phong cách hiện đại và mức giá ưu đãi nhất dành cho ngài.</p>
     </section>
 
-    <!-- Main Content -->
+    <!-- Danh sách sản phẩm -->
     <div class="container">
-        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+        <h2 class="section-title">Danh Sách Sản Phẩm</h2>
         <div id="products" class="products-grid">
             <p style="text-align: center; grid-column: 1/-1;">Đang tải danh sách sản phẩm...</p>
+        </div>
+    </div>
+
+    <!-- Modal Giỏ Hàng -->
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shopping-cart"></i> Giỏ Hàng Của Ngài</h3>
+            </div>
+            <div id="cart-items-list" class="modal-body">
+                <p style="color: #6c757d; text-align: center;">Giỏ hàng đang trống.</p>
+            </div>
+            <div id="cart-total-container" class="cart-total" style="display: none;">
+                <span>Tổng tiền:</span>
+                <span id="cart-total-price" style="color: var(--accent-color);">0 đ</span>
+            </div>
+            <div class="modal-footer" style="margin-top: 15px;">
+                <button class="btn-close" onclick="closeCart()">Đóng</button>
+                <button class="btn-checkout" onclick="alert('Tính năng thanh toán đang được phát triển!')">Thanh Toán</button>
+            </div>
         </div>
     </div>
 
@@ -90,15 +119,25 @@
         <p>&copy; 2026 Bá Khí Fashion. Tất cả các quyền được bảo lưu.</p>
     </footer>
 
+    <!-- Script xử lý -->
     <script>
-        let cartCount = 0;
+        let cart = [];
 
-        function addToCart(name) {
-            cartCount++;
-            document.getElementById('cart-count').textContent = cartCount;
-            alert(`Đã thêm "${name}" vào giỏ hàng!`);
-        }
+        // 10 ảnh thời trang chuẩn tương ứng 10 sản phẩm
+        const productImages = [
+            "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1542272604-780c36856d64?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1625910513413-5fc283401a09?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80"
+        ];
 
+        // Tải dữ liệu từ API
         async function loadProducts() {
             try {
                 const res = await fetch("/api/products");
@@ -111,14 +150,8 @@
                     return;
                 }
 
-                // Hình ảnh minh họa mặc định
-                const defaultImages = [
-                    "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1542272604-780c36856d64?auto=format&fit=crop&w=500&q=80"
-                ];
-
                 data.products.forEach((p, index) => {
-                    const imgUrl = p.image_key || defaultImages[index % defaultImages.length];
+                    const imgUrl = productImages[index] || "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80";
                     const priceFormatted = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(p.price);
 
                     const el = document.createElement("div");
@@ -128,8 +161,8 @@
                         <div class="product-info">
                             <h3 class="product-title">${p.name}</h3>
                             <div class="product-price">${priceFormatted}</div>
-                            <div class="product-stock"><i class="fas fa-box"></i> Còn lại: ${p.stock} sản phẩm</div>
-                            <button class="btn-add" onclick="addToCart('${p.name}')">
+                            <div class="product-stock"><i class="fas fa-box"></i> Kho: ${p.stock} sản phẩm</div>
+                            <button class="btn-add" onclick="addToCart('${p.name.replace(/'/g, "\\'")}', ${p.price})">
                                 <i class="fas fa-cart-plus"></i> Thêm vào giỏ
                             </button>
                         </div>
@@ -141,6 +174,47 @@
             }
         }
 
+        // Thêm vào giỏ hàng
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            document.getElementById('cart-count').textContent = cart.length;
+            alert(`Đã thêm "${name}" vào giỏ hàng!`);
+        }
+
+        // Mở cửa sổ giỏ hàng
+        function openCart() {
+            const listEl = document.getElementById('cart-items-list');
+            const totalContainer = document.getElementById('cart-total-container');
+            const totalPriceEl = document.getElementById('cart-total-price');
+
+            if (cart.length === 0) {
+                listEl.innerHTML = '<p style="color: #6c757d; text-align: center;">Giỏ hàng đang trống.</p>';
+                totalContainer.style.display = 'none';
+            } else {
+                let total = 0;
+                listEl.innerHTML = cart.map((item, i) => {
+                    total += item.price;
+                    const priceFmt = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price);
+                    return `
+                        <div class="cart-item">
+                            <span><strong>${item.name}</strong></span>
+                            <span style="color: var(--accent-color); font-weight: bold;">${priceFmt}</span>
+                        </div>
+                    `;
+                }).join('');
+                
+                totalPriceEl.textContent = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+                totalContainer.style.display = 'flex';
+            }
+            document.getElementById('cart-modal').style.display = 'flex';
+        }
+
+        // Đóng giỏ hàng
+        function closeCart() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        // Khởi chạy khi load trang
         loadProducts();
     </script>
 </body>
